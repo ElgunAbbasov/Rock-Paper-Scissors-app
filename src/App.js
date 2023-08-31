@@ -12,21 +12,6 @@ const App=()=> {
 
   const [ticket,setTicket]=useState(5);
   const [score,setScore]=useState(0);
-  
-  const scoreSaver=()=>{
-    if(ticket===0){
-      return;
-    }
-    if({onRockClick} || {onPaperClick} || {onScissorsClick}==="q"){
-      setScore((score+1));
-    }
-    if({onRockClick} || {onPaperClick} || {onScissorsClick}==="b"){
-      setScore((score+0));
-    }
-    if({onRockClick} || {onPaperClick} || {onScissorsClick}==="m"){
-      setScore((score-1));
-    }
-  }
 
   const ticketSaver=()=>{
     if(ticket===0){
@@ -59,15 +44,18 @@ const App=()=> {
     const selectedEvent=select()
       if(selectedEvent==="rock"){
         console.log("b")
-        return scoreSaver("b");
+        setScore((score+0))
+        return "b";
       }
       if(selectedEvent==="paper"){
         console.log("m")
-        return scoreSaver("m");
+        setScore((score-1))
+        return "m";
       }
       if(selectedEvent==="scissors"){
         console.log("q")
-        return scoreSaver("q");
+        setScore((score+1))
+        return "q";
       }
   };
   const paper=()=>{
@@ -85,15 +73,18 @@ const App=()=> {
       const selectedEvent=select()
       if(selectedEvent==="rock"){
         console.log("q")
-        return scoreSaver("q");
+        setScore((score+1))
+        return "q";
       }
       if(selectedEvent==="paper"){
         console.log("b")
-        return scoreSaver("b");
+        setScore((score+0))
+        return "b";
       }
       if(selectedEvent==="scissors"){
         console.log("m")
-        return scoreSaver("m");
+        setScore((score-1))
+        return "m";
       };
   };
   const scissors=()=>{
@@ -111,15 +102,18 @@ const App=()=> {
     const selectedEvent=select()
       if(selectedEvent==="rock"){
         console.log("m")
-        return scoreSaver("m");
+        setScore((score-1))
+        return "m";
       }
       if(selectedEvent==="paper"){
         console.log("q")
-        return scoreSaver("q");
+        setScore((score+1))
+        return "q";
       }
       if(selectedEvent==="scissors"){
         console.log("b")
-        return scoreSaver("b");
+        setScore((score+0))
+        return "b";
       };
   }
   const vs=()=>{
